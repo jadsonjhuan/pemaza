@@ -1,0 +1,29 @@
+<div class="row">
+    <div class="col-10">
+      <h6>Sistema TI</h6>
+      <h5><b>Novo Cadastro</b></h5>
+    </div>
+    <div class="col-2" style="text-align: right">
+    </div>
+  </div>
+  <br/>
+  <div class="row form-container">
+    <div class="col-6">
+      <label>Nome completo</label>
+      <input class="form-control" name="clienteBean.nome" [(ngModel)]="clienteBean.nome" placeholder="Nome completo">
+    </div>
+    <div class="col-3">
+      <label>Registro</label>
+      <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" [(ngModel)]="clienteBean.ativo" id="customCheck">
+          <label class="custom-control-label" for="customCheck">Ativo</label>
+      </div>
+    </div>
+    <div class="col-3">
+      <label><br/></label>
+      <br/>
+      <a href="/" class="btn btn-pmz btn-outline-primary">Cancelar</a>
+      &nbsp;&nbsp;
+      <button (click)="save()" type="button" class="btn btn-pmz btn-outline-primary">Salvar cadastro</button>
+    </div>
+  </div>

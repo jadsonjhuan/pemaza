@@ -1,0 +1,67 @@
+.circle-status {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.client-list {
+    border: 1px solid #dee2e6;
+    padding: 0;
+}
+
+.table-head-client {
+    margin-bottom: 0px;    
+}
+.table-head-client thead tr th {
+    border-bottom: none;
+}
+.table-body-client{
+    margin-bottom: 0px;
+}
+.table-body-client tbody tr {
+    cursor: pointer;
+}
+.table-body-client tbody tr td {
+    color: gray;
+}
+.table-body-client tbody tr.active {
+    background-color: rgba(0,0,0,.065);
+}
+.table-body-client tbody tr.active td {
+    color: black;
+}
+.table-body-client tbody tr td .btn {
+    border-color: #1D334B;
+    color: #1D334B;
+}
+.table-body-client tbody tr td .btn:hover,
+.table-body-client tbody tr td .btn:active {
+    background-color: transparent;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.3);
+}
+div.table-header {
+    border-top: 4px solid #1D334B;
+    border-bottom: 1.3px solid #1D334B;
+}
+
+div.table-header-scroll {
+    padding-right: 16px;
+}
+
+div.table-scroll {
+    overflow-y: auto;
+    height: 294px;
+}
+
+.alert {
+    max-width: 660px !important;
+    text-align: left !important;
+    margin: auto;
+    color: white !important;
+}
+.alert-success {
+    background-color: #4CC371 !important;
+}
+input.form-control {
+    border-radius: 0px !important;
+}

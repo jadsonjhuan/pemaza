@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+.container {
+    max-width: 960px;
+    margin: auto;
+    padding: 8px;
+    padding-top: 40px;
+}
+.form-container {
+    border: 1px solid #dee2e6;
+    border-top: 4px solid #1D334B;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 0 !important;
+}
+.btn.btn-pmz {
+    border-color: #1D334B !important;
+    color: #1D334B !important;
+}
+.btn.btn-pmz:hover,
+.btn.btn-pmz:active {
+    background-color: transparent !important;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.3) !important;
+    color: #1D334B !important;
+}
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    background-color: #4CC371 !important;
+}
+.custom-control-input:checked~.custom-control-label::before {
+    color: #fff;
+    background-color: #4CC371 !important;
+}
+.custom-control-label::before {
+    height: 24px !important;
+    width: 24px !important;
+}
+.custom-control-label::after {
+    background-size: 65% 65% !important;
+    height: 24px !important;
+    width: 24px !important;
+}
+.custom-control-label {
+    padding-left: 9px !important;
+    padding-top: 3px !important;
+}

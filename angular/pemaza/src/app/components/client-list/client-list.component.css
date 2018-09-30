@@ -1,0 +1,41 @@
+.circle-status {
+    width: 14px;
+    height: 14px;
+    display: inline-block;
+    border-radius: 50%;
+}
+.client-list {
+    border: 1px solid #dee2e6;
+    padding: 0;
+}
+.table-head-client {
+    margin-bottom: 0px;
+    border-top: 4px solid #1D334B;
+}
+.table-head-client thead tr th {
+    border-bottom: 1.3px solid #1D334B;
+}
+.table-body-client{
+    margin-bottom: 0px;
+}
+.table-body-client tbody tr {
+    cursor: pointer;
+}
+.table-body-client tbody tr td {
+    color: gray;
+}
+.table-body-client tbody tr.active {
+    background-color: rgba(0,0,0,.065);
+}
+.table-body-client tbody tr.active td {
+    color: black;
+}
+.table-body-client tbody tr td .btn {
+    border-color: #1D334B;
+    color: #1D334B;
+}
+.table-body-client tbody tr td .btn:hover,
+.table-body-client tbody tr td .btn:active {
+    background-color: transparent;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.3);
+}

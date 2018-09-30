@@ -1,0 +1,98 @@
+<!-- BEGIN LISTA -->
+<div [hidden]="editing">
+  <div class="row">
+    <div class="col-10">
+      <h6>Bem vindo(a) ao</h6>
+      <h5><b>Sistema TI</b></h5>
+    </div>
+    <div class="col-2" style="text-align: right">
+      <button (click)="add()" type="button" class="btn btn-pmz btn-sm btn-outline-primary">Novo Cadastro</button>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-12">
+      <div class="col-12 client-list">
+        <div class="table-header {{ scroll ? 'table-header-scroll' : '' }}">
+          <table class="table table-head-client {{ scroll ? 'table-scroll' : '' }}">
+            <thead>
+              <tr>
+                <th style="width: 20%">Código</th>
+                <th style="width: 35%">Nome Completo</th>
+                <th style="width: 25%">Registro</th>
+                <th style="width: 20%" colspan="2"></th>
+              </tr>
+            </thead>
+          </table>
+        </div>
+        <div class="{{ scroll ? 'table-scroll' : '' }}" style="height: 294px;">
+          <table class="table table-body-client table-hover">
+            <tbody>
+              <tr *ngFor="let cliente of clientes" [ngClass]="{active: clienteBean == cliente}" (click)="setClienteBean(cliente)">
+                <td style="width: 20%">{{ padleft(cliente.getCodigo()) }}</td>
+                <td style="width: 35%">{{ cliente.getNome() }}</td>
+                <td style="width: 25%">
+                  <span [hidden]="!cliente.isAtivo()">
+                    <i class="circle-status" style="background-color: limegreen"></i>
+                    &nbsp;Ativo
+                  </span>
+                  <span [hidden]="cliente.isAtivo()">
+                    <i class="circle-status" style="background-color: red;"></i>
+                    &nbsp;Inativo
+                  </span>
+                </td>
+                <td style="width: 10%">
+                  <button type="button" (click)="edit()" [hidden]="clienteBean != cliente" class="btn btn-pmz btn-sm btn-outline-primary">Editar</button>
+                </td>
+                <td style="width: 10%">
+                  <button type="button" (click)="delele()" [hidden]="clienteBean != cliente" class="btn btn-pmz btn-sm btn-outline-primary">Excluir</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br />
+  <div class="text-center alert alert-{{ messageType }}" role="alert" [hidden]="messageText == null || messageText == ''">
+    <span [innerHTML]="messageText"></span>
+    <span [hidden]="!messageBtnCancDel" style="cursor: pointer; float: right" (click)="cancelDelete()"><b>DESFAZER</b></span>
+  </div>
+</div>
+<!-- END LISTA -->
+
+<!-- BEGIN FORM -->
+<div [hidden]="!editing">
+  <div class="row">
+    <div class="col-10">
+      <h6>Sistema TI</h6>
+      <h5><b>{{ clienteBean.getCodigo() ? 'Editar':'Novo' }} Cadastro</b></h5>
+    </div>
+    <div class="col-2" style="text-align: right">
+    </div>
+  </div>
+  <br />
+  <div class="row form-container">
+    <div class="col-6">
+      <label>Nome completo</label>
+      <input class="form-control" name="clienteBean.nome" [(ngModel)]="clienteBean.nome" placeholder="Nome completo">
+    </div>
+    <div class="col-3">
+      <label>Registro</label>
+      <div class="custom-control custom-checkbox">
+        <input type="checkbox" class="custom-control-input" [(ngModel)]="clienteBean.ativo" id="customCheck">
+        <label class="custom-control-label" for="customCheck">Ativo</label>
+      </div>
+    </div>
+    <div class="col-3">
+      <label><br /></label>
+      <br />
+      <button (click)="cancelRegister()" type="button" class="btn btn-pmz btn-outline-primary">Cancelar</button>
+      &nbsp;&nbsp;
+      <button [disabled]="clienteBean.nome == null || clienteBean == ''" (click)="saveRegister()" type="button" class="btn btn-pmz btn-outline-primary">Salvar
+        cadastro</button>
+    </div>
+  </div>
+</div>
+<!-- END FORM -->
